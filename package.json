@@ -1,0 +1,16 @@
+{
+  "name": "neeto-planner-playwright-tests-by-akash-parida",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/akash5k/neeto-planner-playwright-tests-by-akash-parida.git",
+  "author": "akash5k <akashparida185@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1"
+  }
+}
