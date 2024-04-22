@@ -9,8 +9,6 @@ test.describe("Login Page", () => {
         loginCode = faker.random.numeric(6);
     })
     test("Should login the user correctly", async ({ page }) => {
-        // test.slow();
-        // test.setTimeout(1200000);
         await page.goto("https://akash-parida-iiit-bh.neetoplanner.net/");
         await page.locator('[data-test-id="neeto-auth-email-input-field"]').fill("cpts9gnqty9-planner-akash_parida-iiit_bh@bigbinary.com");
         await page.locator('[data-test-id="neeto-auth-login-button"]').click();
