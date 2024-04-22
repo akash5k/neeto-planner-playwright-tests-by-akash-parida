@@ -10,9 +10,15 @@ export default class LoginPage {
     }
 
     loginAndVerify = async ({email,loginCode}:{email:string,loginCode:string}):Promise<void>=>{
+<<<<<<< HEAD
         await this.page.getByTestId(INPUT_SELECTORS.emailInput).fill(email)
         await this.page.getByTestId(BUTTON_SELECTORS.loginButton).click();        
         await this.page.getByPlaceholder(INPUT_SELECTORS.loginCode).fill(loginCode);
+=======
+        await this.page.getByTestId('neeto-auth-email-input-field').fill(email)
+        await this.page.getByTestId('neeto-auth-login-button').click();        
+        await this.page.getByPlaceholder('Enter 6 digit login code').fill(loginCode);
+>>>>>>> add test for creating project
         //verify if logged in successful
         await expect(this.page.getByTestId('main-header')).toBeVisible(({
             timeout:50000,
