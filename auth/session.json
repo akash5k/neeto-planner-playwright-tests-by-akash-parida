@@ -2,10 +2,10 @@
   "cookies": [
     {
       "name": "__neetoauth_session",
-      "value": "d2cb43b36421398646dbbf34a2e99fc4",
+      "value": "7045728353d97cea83ec8ddc8342f0f5",
       "domain": "app.neetoauth.net",
       "path": "/",
-      "expires": 1721580885.508839,
+      "expires": 1721581666.088304,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
@@ -22,20 +22,20 @@
     },
     {
       "name": "__neetoauth_session",
-      "value": "3e0d89446f94317963b398b09bb6a87b",
+      "value": "4c789efc8d3bee6183d605dac8b89a9e",
       "domain": "akash-parida-iiit-bh.neetoauth.net",
       "path": "/",
-      "expires": 1721580887.604124,
+      "expires": 1721581667.842573,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "__neetoplanner_session",
-      "value": "1b55ccc436bf21817e06c8e32d0f9ca9",
+      "value": "a74e9a9e485d746399a46afe9cc70f6b",
       "domain": "akash-parida-iiit-bh.neetoplanner.net",
       "path": "/",
-      "expires": 1721580896.383773,
+      "expires": 1721581670.913988,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
@@ -56,16 +56,12 @@
       "origin": "https://akash-parida-iiit-bh.neetoplanner.net",
       "localStorage": [
         {
-          "name": "WIDGET_ENABLED_STATES",
-          "value": "{\"dkSGNrJLcofuXQAjmZG3B1La\":{\"chat\":false,\"changelog\":false,\"replay\":true},\"91a9nTe45cJXekgXBdoHPWDN\":{\"replay\":false,\"changelog\":true,\"chat\":true}}"
-        },
-        {
           "name": "unsavedComments",
           "value": "{}"
         },
         {
-          "name": "queryCache",
-          "value": "{\"neeto-apps-list-a17cac0c-d2a0-45ab-a09f-02fa36cafa97\":{\"data\":{\"neetoApps\":[{\"name\":\"Chat\",\"description\":\"Live chat & instant messaging\",\"url\":\"https://akash-parida-iiit-bh.neetochat.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Desk\",\"description\":\"Customer support & ticketing\",\"url\":\"https://akash-parida-iiit-bh.neetodesk.net\",\"productionStatus\":\"public-production\"},{\"name\":\"KB\",\"description\":\"Knowledge Base to find answers\",\"url\":\"https://akash-parida-iiit-bh.neetokb.net/admin\",\"productionStatus\":\"public-production\"},{\"name\":\"Form\",\"description\":\"Build forms and collect data\",\"url\":\"https://akash-parida-iiit-bh.neetoform.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Invoice\",\"description\":\"Invoicing & time tracking\",\"url\":\"https://akash-parida-iiit-bh.neetoinvoice.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Cal\",\"description\":\"Schedule meetings\",\"url\":\"https://akash-parida-iiit-bh.neetocal.net/admin\",\"productionStatus\":\"public-production\"},{\"name\":\"Planner\",\"description\":\"Manage projects and todos\",\"url\":\"https://akash-parida-iiit-bh.neetoplanner.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Replay\",\"description\":\"Watch customer activities\",\"url\":\"https://akash-parida-iiit-bh.neetoreplay.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Quiz\",\"description\":\"Build quizzes\",\"url\":\"https://akash-parida-iiit-bh.neetoquiz.net/admin\",\"productionStatus\":\"private-production\"},{\"name\":\"Wireframe\",\"description\":\"Build wireframes\",\"url\":\"https://akash-parida-iiit-bh.neetowireframe.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Changelog\",\"description\":\"Inform customers of new updates\",\"url\":\"https://akash-parida-iiit-bh.neetochangelog.net/admin\",\"productionStatus\":\"private-production\"},{\"name\":\"Runner\",\"description\":\"Coding assessments & technical interviews\",\"url\":\"https://akash-parida-iiit-bh.neetorunner.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Course\",\"description\":\"Build & sell courses online\",\"url\":\"https://akash-parida-iiit-bh.neetocourse.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Invisible\",\"description\":\"Watch how users interact with your products\",\"url\":\"https://akash-parida-iiit-bh.neetoinvisible.net\",\"productionStatus\":\"private-production\"},{\"name\":\"CRM\",\"description\":\"Manage customers\",\"url\":\"https://akash-parida-iiit-bh.neetocrm.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Testify\",\"description\":\"Manage manual & automated test cases\",\"url\":\"https://akash-parida-iiit-bh.neetotestify.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Site\",\"description\":\"Build websites\",\"url\":\"https://akash-parida-iiit-bh.neetosite.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Git\",\"description\":\"Automate GitHub activities\",\"url\":\"https://akash-parida-iiit-bh.neetogit.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Record\",\"description\":\"Screen Recording\",\"url\":\"https://akash-parida-iiit-bh.neetorecord.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Trail\",\"description\":\"Create Trail of assets\",\"url\":\"https://akash-parida-iiit-bh.neetotrail.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Code\",\"description\":\"Coding platform\",\"url\":\"https://akash-parida-iiit-bh.neetocode.net/login\",\"productionStatus\":\"private-production\"},{\"name\":\"Playdash\",\"description\":\"Playwright reporter\",\"url\":\"https://akash-parida-iiit-bh.neetoplaydash.net\",\"productionStatus\":\"private-production\"}],\"isOwner\":true},\"modifiedAt\":1713804896063}}"
+          "name": "WIDGET_ENABLED_STATES",
+          "value": "{\"91a9nTe45cJXekgXBdoHPWDN\":{\"replay\":false,\"changelog\":true,\"chat\":true}}"
         },
         {
           "name": "neeto-molecules-hidden-columns",
@@ -83,6 +79,18 @@
         {
           "name": "WIDGET_ENABLED_STATES",
           "value": "{\"dkSGNrJLcofuXQAjmZG3B1La\":{\"chat\":false,\"changelog\":false,\"replay\":true},\"djGuPyUK7GPKEWibWYEjcvyK\":{\"replay\":false,\"chat\":true,\"changelog\":false}}"
+        },
+        {
+          "name": "__neetoauthhelp__visitor_token",
+          "value": "216a005fd9e189936505e7d05f2039c9"
+        },
+        {
+          "name": "__neetoauthhelp__neetochat",
+          "value": "{\"widgetState\":{\"key\":\"10653024-8d92-4044-bed1-372650378656-1713805666138\",\"shown\":true,\"maximized\":false,\"messageContent\":\"\"},\"widgetConfig\":{\"type\":\"iconandtext\",\"image\":\"up\",\"text\":\"Help\",\"color\":\"#6671E5\",\"horizontalPosition\":\"right\",\"zIndex\":99999,\"bottomSpacing\":20,\"sideSpacing\":20,\"visibleToAll\":true,\"hiddenMode\":false,\"homeScreenTitle\":\"Hi there! 👋\",\"homeScreenSubtitle\":\"Ask any question or share any feedback.\",\"homeScreenButtonText\":\"New Conversation\",\"responseMessage\":\"Hi! I'm here to assist you with any questions you may have. What can I do for you?\",\"disableWelcomeMessage\":false,\"showKb\":false,\"allowEmailSupport\":false,\"allowWidgetConversation\":true,\"allowAudioMessage\":true,\"locale\":\"en\"},\"widgetTimestamp\":\"2023-01-16T10:01:16.568Z\"}"
+        },
+        {
+          "name": "REACT_QUERY_OFFLINE_CACHE",
+          "value": "{\"buster\":\"\",\"timestamp\":1713805668139,\"clientState\":{\"mutations\":[],\"queries\":[{\"state\":{\"data\":{\"conversations\":[],\"page\":1,\"pageSize\":20,\"source\":\"NETWORK\"},\"dataUpdateCount\":1,\"dataUpdatedAt\":1713805668139,\"error\":null,\"errorUpdateCount\":0,\"errorUpdatedAt\":0,\"fetchFailureCount\":0,\"fetchMeta\":null,\"isFetching\":false,\"isInvalidated\":false,\"isPaused\":false,\"status\":\"success\"},\"queryKey\":[\"CONVERSATIONS\",{\"page\":1,\"pageSize\":20}],\"queryHash\":\"[\\\"CONVERSATIONS\\\",{\\\"page\\\":1,\\\"pageSize\\\":20}]\"},{\"state\":{\"data\":{\"available_agent\":{\"name\":\"\",\"profile_image_path\":\"https://d2v7kzglnr2dnh.cloudfront.net/others/profile-pic.jpg\",\"online_status\":null},\"automation_rules\":[],\"setting\":{\"honeybadger\":{\"api_key\":\"hbp_5bzualY1cPu4uRHXqXMSR1dOgPYfOY1X4Jaq\",\"environment\":\"development\"},\"button_type\":\"iconandtext\",\"color\":\"#6671E5\",\"icon_name\":\"up\",\"icon_text\":\"Help\",\"horizontal_position\":\"right\",\"z_index\":99999,\"response_message\":\"Hi! I'm here to assist you with any questions you may have. What can I do for you?\",\"hidden_mode\":false,\"home_screen_title\":\"Hi there! 👋\",\"home_screen_subtitle\":\"Ask any question or share any feedback.\",\"home_screen_button_text\":\"New Conversation\",\"home_screen_button_subtitle\":null,\"custom_icon_url\":null,\"logo_url\":null,\"side_spacing\":20,\"bottom_spacing\":20,\"visitor_notification\":true,\"visitor_notification_wait_time\":30,\"visitor_notification_method\":\"email\",\"show_kb\":false,\"allow_audio_message\":true,\"disable_welcome_message\":false,\"locale\":\"en\",\"timestamp\":\"2023-01-16T10:01:16.568Z\",\"widget_visibility_to_all\":true,\"widget_installed\":true,\"logo\":null,\"custom_icon\":null,\"is_workflow_enabled\":false,\"active_workflow_id\":null},\"organization_setting\":{\"allow_widget_conversation\":true,\"allow_email_support\":false,\"support_email\":\"\",\"organization_features\":[{\"id\":\"61e2cdae-b7e4-467d-9e30-209fe33cd5c9\",\"enabled\":true,\"feature_flag\":{\"name\":\"instagram\"}},{\"id\":\"5b4afc5f-8a15-4d0b-949b-61ff1e606579\",\"enabled\":true,\"feature_flag\":{\"name\":\"whatsapp\"}},{\"id\":\"a971bae4-98b9-45e8-b276-04319863d7b3\",\"enabled\":true,\"feature_flag\":{\"name\":\"twilio\"}},{\"id\":\"a5a0c27c-c5ec-4183-a0c5-27d94dc92ee9\",\"enabled\":false,\"feature_flag\":{\"name\":\"customer_engagement\"}},{\"id\":\"8ba4dabb-007a-4874-8bac-14bb948546ba\",\"enabled\":true,\"feature_flag\":{\"name\":\"reports\"}},{\"id\":\"d9e40515-27d4-4821-b39e-487ce94f53bf\",\"enabled\":false,\"feature_flag\":{\"name\":\"organization_chats_report\"}}],\"agent_name_is_hidden\":false,\"agent_name\":\"neetoauthhelp\"}},\"dataUpdateCount\":1,\"dataUpdatedAt\":1713805667939,\"error\":null,\"errorUpdateCount\":0,\"errorUpdatedAt\":0,\"fetchFailureCount\":0,\"fetchMeta\":null,\"isFetching\":false,\"isInvalidated\":false,\"isPaused\":false,\"status\":\"success\"},\"queryKey\":[\"initial-data\"],\"queryHash\":\"[\\\"initial-data\\\"]\"}]}}"
         },
         {
           "name": "neeto-molecules-hidden-columns",

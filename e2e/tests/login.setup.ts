@@ -1,10 +1,8 @@
 //login.spec.ts
 
-// import {test ,expect} from "@playwright/test" 
 import { Faker, faker } from "@faker-js/faker"
 import {test} from "../fixtures"
 import { STORAGE_STATE } from "../../playwright.config";
-
 
 test.describe("Login page",()=>{
     let loginCode:string;

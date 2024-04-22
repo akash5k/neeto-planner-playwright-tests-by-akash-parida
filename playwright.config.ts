@@ -53,14 +53,8 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"], storageState: STORAGE_STATE },
       dependencies: ["login"],
       teardown: "teardown",
-      testMatch: "**/*.spec.ts",
-      testIgnore: "**/register.spec.ts",
-    },
-    {
-      name: "Logged out tests",
-      use: { ...devices["Desktop Chrome"] },
-      testMatch: "**/register.spec.ts",
-    },
+      testMatch: "**/*.spec.ts"
+    }
 
     // {
     //   name: 'firefox',
