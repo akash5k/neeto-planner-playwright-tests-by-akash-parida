@@ -1,0 +1,98 @@
+{
+  "cookies": [
+    {
+      "name": "__neetoauth_session",
+      "value": "d2cb43b36421398646dbbf34a2e99fc4",
+      "domain": "app.neetoauth.net",
+      "path": "/",
+      "expires": 1721580885.508839,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "lang",
+      "value": "en-US",
+      "domain": "app.neetoauth.net",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "__neetoauth_session",
+      "value": "3e0d89446f94317963b398b09bb6a87b",
+      "domain": "akash-parida-iiit-bh.neetoauth.net",
+      "path": "/",
+      "expires": 1721580887.604124,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__neetoplanner_session",
+      "value": "1b55ccc436bf21817e06c8e32d0f9ca9",
+      "domain": "akash-parida-iiit-bh.neetoplanner.net",
+      "path": "/",
+      "expires": 1721580896.383773,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "lang",
+      "value": "en-US",
+      "domain": "akash-parida-iiit-bh.neetoplanner.net",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://akash-parida-iiit-bh.neetoplanner.net",
+      "localStorage": [
+        {
+          "name": "WIDGET_ENABLED_STATES",
+          "value": "{\"dkSGNrJLcofuXQAjmZG3B1La\":{\"chat\":false,\"changelog\":false,\"replay\":true},\"91a9nTe45cJXekgXBdoHPWDN\":{\"replay\":false,\"changelog\":true,\"chat\":true}}"
+        },
+        {
+          "name": "unsavedComments",
+          "value": "{}"
+        },
+        {
+          "name": "queryCache",
+          "value": "{\"neeto-apps-list-a17cac0c-d2a0-45ab-a09f-02fa36cafa97\":{\"data\":{\"neetoApps\":[{\"name\":\"Chat\",\"description\":\"Live chat & instant messaging\",\"url\":\"https://akash-parida-iiit-bh.neetochat.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Desk\",\"description\":\"Customer support & ticketing\",\"url\":\"https://akash-parida-iiit-bh.neetodesk.net\",\"productionStatus\":\"public-production\"},{\"name\":\"KB\",\"description\":\"Knowledge Base to find answers\",\"url\":\"https://akash-parida-iiit-bh.neetokb.net/admin\",\"productionStatus\":\"public-production\"},{\"name\":\"Form\",\"description\":\"Build forms and collect data\",\"url\":\"https://akash-parida-iiit-bh.neetoform.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Invoice\",\"description\":\"Invoicing & time tracking\",\"url\":\"https://akash-parida-iiit-bh.neetoinvoice.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Cal\",\"description\":\"Schedule meetings\",\"url\":\"https://akash-parida-iiit-bh.neetocal.net/admin\",\"productionStatus\":\"public-production\"},{\"name\":\"Planner\",\"description\":\"Manage projects and todos\",\"url\":\"https://akash-parida-iiit-bh.neetoplanner.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Replay\",\"description\":\"Watch customer activities\",\"url\":\"https://akash-parida-iiit-bh.neetoreplay.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Quiz\",\"description\":\"Build quizzes\",\"url\":\"https://akash-parida-iiit-bh.neetoquiz.net/admin\",\"productionStatus\":\"private-production\"},{\"name\":\"Wireframe\",\"description\":\"Build wireframes\",\"url\":\"https://akash-parida-iiit-bh.neetowireframe.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Changelog\",\"description\":\"Inform customers of new updates\",\"url\":\"https://akash-parida-iiit-bh.neetochangelog.net/admin\",\"productionStatus\":\"private-production\"},{\"name\":\"Runner\",\"description\":\"Coding assessments & technical interviews\",\"url\":\"https://akash-parida-iiit-bh.neetorunner.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Course\",\"description\":\"Build & sell courses online\",\"url\":\"https://akash-parida-iiit-bh.neetocourse.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Invisible\",\"description\":\"Watch how users interact with your products\",\"url\":\"https://akash-parida-iiit-bh.neetoinvisible.net\",\"productionStatus\":\"private-production\"},{\"name\":\"CRM\",\"description\":\"Manage customers\",\"url\":\"https://akash-parida-iiit-bh.neetocrm.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Testify\",\"description\":\"Manage manual & automated test cases\",\"url\":\"https://akash-parida-iiit-bh.neetotestify.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Site\",\"description\":\"Build websites\",\"url\":\"https://akash-parida-iiit-bh.neetosite.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Git\",\"description\":\"Automate GitHub activities\",\"url\":\"https://akash-parida-iiit-bh.neetogit.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Record\",\"description\":\"Screen Recording\",\"url\":\"https://akash-parida-iiit-bh.neetorecord.net\",\"productionStatus\":\"public-production\"},{\"name\":\"Trail\",\"description\":\"Create Trail of assets\",\"url\":\"https://akash-parida-iiit-bh.neetotrail.net\",\"productionStatus\":\"private-production\"},{\"name\":\"Code\",\"description\":\"Coding platform\",\"url\":\"https://akash-parida-iiit-bh.neetocode.net/login\",\"productionStatus\":\"private-production\"},{\"name\":\"Playdash\",\"description\":\"Playwright reporter\",\"url\":\"https://akash-parida-iiit-bh.neetoplaydash.net\",\"productionStatus\":\"private-production\"}],\"isOwner\":true},\"modifiedAt\":1713804896063}}"
+        },
+        {
+          "name": "neeto-molecules-hidden-columns",
+          "value": "{\"state\":{\"PROJECTS_TABLE_HIDDEN_COLUMNS\":[]},\"version\":0}"
+        },
+        {
+          "name": "neeto-ip-location-country-code",
+          "value": "{\"state\":{\"countryCode\":null},\"version\":0}"
+        }
+      ]
+    },
+    {
+      "origin": "https://app.neetoauth.net",
+      "localStorage": [
+        {
+          "name": "WIDGET_ENABLED_STATES",
+          "value": "{\"dkSGNrJLcofuXQAjmZG3B1La\":{\"chat\":false,\"changelog\":false,\"replay\":true},\"djGuPyUK7GPKEWibWYEjcvyK\":{\"replay\":false,\"chat\":true,\"changelog\":false}}"
+        },
+        {
+          "name": "neeto-molecules-hidden-columns",
+          "value": "{\"state\":{},\"version\":0}"
+        },
+        {
+          "name": "neeto-ip-location-country-code",
+          "value": "{\"state\":{\"countryCode\":null},\"version\":0}"
+        }
+      ]
+    }
+  ]
+}

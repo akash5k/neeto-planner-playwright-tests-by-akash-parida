@@ -5,7 +5,7 @@ import { defineConfig, devices } from '@playwright/test';
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
-
+export const STORAGE_STATE = "./auth/session.json";
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -37,6 +37,29 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: "login",
+      use: { ...devices["Desktop Chrome"] },
+      testMatch: "**/login.setup.ts",
+    },
+    {
+      name: "teardown",
+      use: { ...devices["Desktop Chrome"] },
+      testMatch: "**/global.teardown.ts",
+    },
+    {
+      name: "Logged In tests",
+      use: { ...devices["Desktop Chrome"], storageState: STORAGE_STATE },
+      dependencies: ["login"],
+      teardown: "teardown",
+      testMatch: "**/*.spec.ts",
+      testIgnore: "**/register.spec.ts",
+    },
+    {
+      name: "Logged out tests",
+      use: { ...devices["Desktop Chrome"] },
+      testMatch: "**/register.spec.ts",
     },
 
     // {

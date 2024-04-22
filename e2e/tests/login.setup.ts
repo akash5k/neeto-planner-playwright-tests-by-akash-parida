@@ -3,7 +3,7 @@
 // import {test ,expect} from "@playwright/test" 
 import { Faker, faker } from "@faker-js/faker"
 import {test} from "../fixtures"
-import LoginPage from "../poms/login";
+import { STORAGE_STATE } from "../../playwright.config";
 
 
 test.describe("Login page",()=>{
@@ -18,6 +18,7 @@ test.describe("Login page",()=>{
             email: "cpts9gnqty9-planner-akash_parida-iiit_bh@bigbinary.com",
             loginCode : loginCode
         })
+        await page.context().storageState({ path: STORAGE_STATE });
     })
 })
 
