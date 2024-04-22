@@ -9,7 +9,6 @@ export default class LoginPage {
     }
 
     loginAndVerify = async ({email,loginCode}:{email:string,loginCode:string}):Promise<void>=>{
-        await this.page.goto("https://akash-parida-iiit-bh.neetoplanner.net/");
         await this.page.getByTestId('neeto-auth-email-input-field').fill(email)
         await this.page.getByTestId('neeto-auth-login-button').click();        
         await this.page.getByPlaceholder('Enter 6 digit login code').fill(loginCode);
