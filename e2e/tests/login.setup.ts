@@ -2,6 +2,7 @@
 
 import { Faker, faker } from "@faker-js/faker"
 import { test } from "../fixtures"
+import { EMAIL } from "../constants/selectors/login";
 import { STORAGE_STATE } from "../../playwright.config";
 
 test.describe("Login page", () => {
@@ -16,7 +17,7 @@ test.describe("Login page", () => {
 
         await test.step ("Step 2 : Login to the application",async()=>{
             await loginPage.loginAndVerify({
-                email: "cpts9gnqty9-planner-akash_parida-iiit_bh@bigbinary.com",
+                email: EMAIL,
                 loginCode: loginCode
             })
             await page.context().storageState({ path: STORAGE_STATE });
