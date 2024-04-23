@@ -2,7 +2,7 @@
 
 import { Faker, faker } from "@faker-js/faker"
 import { test } from "../fixtures"
-import { EMAIL } from "../constants/selectors/login";
+import { EMAIL } from "../constants/texts/login";
 import { STORAGE_STATE } from "../../playwright.config";
 
 test.describe("Login page", () => {
