@@ -6,6 +6,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 // require('dotenv').config();
 export const STORAGE_STATE = "./auth/session.json";
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -22,7 +23,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  timeout:60000,
+ 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://akash-parida-iiit-bh.neetoplanner.net',
@@ -34,13 +35,6 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-<<<<<<< HEAD
-=======
-    // {
-    //   name: 'chromium',
-    //   use: { ...devices['Desktop Chrome'] },
-    // },
->>>>>>> add test for creating project
     {
       name: "login",
       use: { ...devices["Desktop Chrome"] },
