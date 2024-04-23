@@ -5,7 +5,9 @@ import { defineConfig, devices } from '@playwright/test';
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
+
 export const STORAGE_STATE = "./auth/session.json";
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -22,6 +24,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+
   
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -30,11 +33,13 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     testIdAttribute : 'data-test-id'
+
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
+
       name: "login",
       use: { ...devices["Desktop Chrome"] },
       testMatch: "**/login.setup.ts",
