@@ -1,4 +1,5 @@
 import { Page, expect } from "@playwright/test"
+import { BUTTON_TEXTS ,INPUT_SELECTORS} from "../constants/selectors/project"
 
 
 interface projectDetails {
@@ -13,10 +14,10 @@ export class ProjectPage {
 
     addProject = async ({ projectName, projectDescription }: projectDetails) => {
 
-        await this.page.getByRole('button', { name: 'Add new project' }).click();
-        await this.page.getByPlaceholder('Enter project name').fill(projectName);
-        await this.page.getByPlaceholder('Enter description').fill(projectDescription);
-        await this.page.getByRole('button', { name: 'Save changes' }).click();
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.addButton }).click();        
+        await this.page.getByPlaceholder(INPUT_SELECTORS.projectName).fill(projectName);
+        await this.page.getByPlaceholder(INPUT_SELECTORS.projectDescription).fill(projectDescription);
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.saveButton }).click();
 
         //verify project creation
         await expect(this.page.getByText(projectName)).toBeVisible();
