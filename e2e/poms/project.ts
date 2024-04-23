@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test"
-import { BUTTON_TEXTS ,INPUT_SELECTORS} from "../constants/selectors/project"
+import { BUTTON_TEXTS ,INPUT_SELECTORS} from "../constants/texts/project"
 
 
 interface projectDetails {

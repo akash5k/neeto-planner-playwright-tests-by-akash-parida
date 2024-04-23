@@ -1,7 +1,7 @@
 // poms/login.ts
 
 import { Page, expect } from "@playwright/test";
-import { BUTTON_SELECTORS ,INPUT_SELECTORS} from "../constants/selectors/login";
+import { BUTTON_SELECTORS ,INPUT_SELECTORS} from "../constants/texts/login";
 
 export default class LoginPage {
     page: Page;
