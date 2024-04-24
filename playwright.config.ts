@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 /**
  * Read environment variables from file.
@@ -8,11 +8,18 @@ import { defineConfig, devices } from '@playwright/test';
 
 export const STORAGE_STATE = "./auth/session.json";
 
+const neetoPlaywrightReporterConfig = {
+  ciBuildId: new Date().toUTCString(),
+  apiKey: "vsdQxxAg9DuBmGguegoLDPo17J52hDd9GqmwNxFX3vutyP4Y",
+  projectKey: "348r5mcZp2UTDFK5njVZuihT",
+  baseURL: "https://connect.neetoplaydash.net",
+};
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './e2e',
+  testDir: "./e2e",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -22,24 +29,26 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ["@bigbinary/neeto-playwright-reporter", neetoPlaywrightReporterConfig],
+    ["html"],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
-  
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://akash-parida-iiit-bh.neetoplanner.net',
+    baseURL: "https://akash-parida-iiit-bh.neetoplanner.net",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    testIdAttribute : 'data-test-id'
-
+    trace: "on",
+    video: "on",
+    screenshot: "on",
+    testIdAttribute: "data-test-id",
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-
       name: "login",
       use: { ...devices["Desktop Chrome"] },
       testMatch: "**/login.setup.ts",
@@ -54,7 +63,7 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"], storageState: STORAGE_STATE },
       dependencies: ["login"],
       teardown: "teardown",
-      testMatch: "**/*.spec.ts"
-    }
+      testMatch: "**/*.spec.ts",
+    },
   ],
 });
