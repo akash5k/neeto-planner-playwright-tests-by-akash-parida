@@ -2,7 +2,7 @@ import { Page, expect } from "@playwright/test"
 import { BUTTON_TEXTS ,INPUT_SELECTORS} from "../constants/texts/project"
 
 
-interface projectDetails {
+interface ProjectDetails {
     projectName: string,
     projectDescription: string
 }
@@ -12,7 +12,7 @@ export class ProjectPage {
         this.page = page;
     }
 
-    addProject = async ({ projectName, projectDescription }: projectDetails) => {
+    addProject = async ({ projectName, projectDescription }: ProjectDetails) => {
 
         await this.page.getByRole('button', { name: BUTTON_TEXTS.addButton }).click();        
         await this.page.getByPlaceholder(INPUT_SELECTORS.projectName).fill(projectName);

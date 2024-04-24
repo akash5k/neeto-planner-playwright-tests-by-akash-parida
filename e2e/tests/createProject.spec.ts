@@ -8,10 +8,10 @@ test.describe("Create task", () => {
         projectName = faker.word.words({ count: 2 });
         projectDescription = faker.word.words({ count: 10 });
     })
-    test("Should create a task and verify on project details page", async ({
+    test("should create a task and verify on project details page", async ({
         page,
         projectPage }) => {
-        await page.goto("/");
-        await projectPage.addProject({ projectName, projectDescription });
+        await test.step("Step 1 : Navigate to base url", () => page.goto("/"))
+        await test.step("Step 2 : Create and verify the project", () => projectPage.addProject({ projectName, projectDescription }))
     })
 })
