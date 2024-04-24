@@ -34,7 +34,7 @@ export default defineConfig({
     ["html"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-
+  timeout:60000,
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: "https://akash-parida-iiit-bh.neetoplanner.net",
