@@ -1,7 +1,8 @@
 import { expect } from "@playwright/test";
 import { faker, fi } from "@faker-js/faker";
 import { test } from "../fixtures/index";
-import { COMMON_SELECTORS, COMMON_TEXTS, TEST_DATA } from "../constants/common";
+
+import {  COMMON_TEXTS, TEST_DATA } from "../constants/common";
 
 test.describe("Create and verify tasks", () => {
     let projectNames: string[];
@@ -17,8 +18,8 @@ test.describe("Create and verify tasks", () => {
     });
 
     test("should create and verify tasks", async ({ page, projectPage, taskPage }) => {
-        await test.step("Step 1: Navigate to base URL", async () => {
-            await page.goto("/");
+        await test.step("Step 1: Navigate to base URL",  () => {
+             page.goto("/");
         });
 
         await test.step("Step 2: Assert there are no assigned tasks", async () => {
