@@ -16,6 +16,8 @@ interface TaskDetails {
     taskComment: string
 }
 test.describe("Create and verify task for different user", () => {
+    let loginCode: string;
+
     let firstPoject : ProjectDetails;
     let secondProject : ProjectDetails;
 
@@ -23,6 +25,7 @@ test.describe("Create and verify task for different user", () => {
     let secondTask : TaskDetails;
 
     test.beforeEach(() => {
+        loginCode = faker.string.numeric(6);
         firstPoject = { projectName: faker.word.words({ count: 3 }) }
         secondProject = { projectName: faker.word.words({ count: 3 }) }
 
@@ -56,8 +59,8 @@ test.describe("Create and verify task for different user", () => {
         //visit standard subdomain
         await standardUserPage.goto("/");
         await standardUserLogin.loginAndVerify({
-            email: "cpts9gnqty9-planner-akash_parida-iiit_bh+standard@bigbinary.com",
-            loginCode: "123456"
+            email: TEST_DATA.standardUserEmail,
+            loginCode: loginCode
         })
 
         //assert no tasks assigne in standard user  --> to do method
@@ -70,14 +73,14 @@ test.describe("Create and verify task for different user", () => {
         await projectPage.addProject({ projectName: firstPoject.projectName });
         await projectPage.addStandaruserToProject();        
         await page.getByRole('button', { name: BUTTON_TEXTS.listTab }).click()
-        await taskPage.addTask({ taskName: firstTask.taskName, taskAssignee: "Akash Parida Standard" });
+        await taskPage.addTask({ taskName: firstTask.taskName, taskAssignee: TEST_DATA.standardUserName });
         await taskPage.addDescriptionAndComment({ taskName: firstTask.taskName, taskDescription: firstTask.taskDescription , taskComment: firstTask.taskComment });
 
         await page.goto("/")
         await projectPage.addProject({ projectName: secondProject.projectName });
         await projectPage.addStandaruserToProject();        
         await page.getByRole('button', { name: BUTTON_TEXTS.listTab }).click()
-        await taskPage.addTask({ taskName: secondTask.taskName, taskAssignee: "Akash Parida Standard" });
+        await taskPage.addTask({ taskName: secondTask.taskName, taskAssignee: TEST_DATA.standardUserName });
         await taskPage.addDescriptionAndComment({ taskName: secondTask.taskName, taskDescription: secondTask.taskDescription, taskComment: secondTask.taskComment });
 
 

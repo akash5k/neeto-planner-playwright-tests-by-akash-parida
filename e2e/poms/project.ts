@@ -1,6 +1,8 @@
 import { Page, expect } from "@playwright/test"
 import { BUTTON_TEXTS, INPUT_SELECTORS } from "../constants/texts/project"
-
+import { SELECTORS } from "../constants/selectors/project"
+import { COMMON_SELECTORS } from "../constants/common";
+import {TEST_DATA} from "../constants/common"
 
 interface ProjectDetails {
     projectName: string,
@@ -14,6 +16,7 @@ export class ProjectPage {
     }
 
     addProject = async ({ projectName, projectDescription = "" }: ProjectDetails): Promise<void> => {
+        //goto main page
 
         await this.page.getByRole('button', { name: BUTTON_TEXTS.addButton }).click();
         await this.page.getByPlaceholder(INPUT_SELECTORS.projectName).fill(projectName);
@@ -24,16 +27,29 @@ export class ProjectPage {
         await expect(this.page.getByText(projectName)).toBeVisible();
     }
 
+    addStandaruserToProject = async (): Promise<void> => {
+        await this.page
+            .locator(SELECTORS.mainHeader)
+            .locator(SELECTORS.menuDropDown)
+            .click()
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.managePeople }).click()
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.addNewMember }).click()  
+        await this.page.getByRole('heading', { name: TEST_DATA.standardUserName }).click()    
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.addAs }).click()
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.regular }).click()
+        await this.page.locator(COMMON_SELECTORS.pannelCloseButton).click()
+    }
+
     deleteProject = async ({ projectName }: ProjectDetails): Promise<void> => {
         await this.page.goto("/")
         await this.page.getByRole('button', { name: new RegExp(projectName, 'i') }).click()
         await this.page
-            .locator('[data-cy="main-header"]')
-            .locator('[data-cy="nui-dropdown-icon"]')
+            .locator(SELECTORS.mainHeader)
+            .locator(SELECTORS.menuDropDown)
             .click()
-        await this.page.getByRole('button', { name: 'Delete' }).click()
-        await expect(this.page.getByRole('heading', { name: 'Delete project?' })).toBeVisible()
-        await this.page.getByRole('button', { name: 'Delete' }).click()
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.delete }).click()
+        await expect(this.page.getByRole('heading', { name: BUTTON_TEXTS.deleteProject })).toBeVisible()
+        await this.page.getByRole('button', { name: BUTTON_TEXTS.delete }).click()
     }
 
 }

@@ -13,6 +13,8 @@ test.describe("Create project", () => {
         projectPage }) => {
         await test.step("Step 1 : Navigate to base url", () => page.goto("/"))
         await test.step("Step 2 : Create and verify the project", () => projectPage.addProject({ projectName, projectDescription }))
-        await test.step("Step 3 : Delete the project",()=>projectPage.deleteProject({projectName}))
+    })
+    test.afterEach(async ({ projectPage }) => {
+        await projectPage.deleteProject({ projectName })
     })
 })

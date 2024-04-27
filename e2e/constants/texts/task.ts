@@ -3,6 +3,7 @@ export const TEXT_SELECTOR = {
 }
 
 export const BUTTON_TEXTS = {
+    addTaskButton : 'Add new task',
     saveChanges : 'Save changes',
     commentButton : 'Comment'
 }

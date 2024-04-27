@@ -1,6 +1,3 @@
-// constants/selectors/buttons.ts
-export const EMAIL = "cpts9gnqty9-planner-akash_parida-iiit_bh@bigbinary.com"
-
 export const TEXT_SELECTORS = { 
     loginButton: "neeto-auth-login-button" ,
     mainHeader : 'main-header'
