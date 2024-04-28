@@ -10,7 +10,8 @@ interface TaskDetails {
 interface TaskDescription {
     taskName: string,
     taskDescription: string,
-    taskComment: string
+    taskComment: string,
+    taskAssignee?: string
 }
 export class TaskPage {
     page: Page;
@@ -22,12 +23,8 @@ export class TaskPage {
         await this.page.getByRole('button', { name: BUTTON_TEXTS.addTaskButton }).click()
         await this.page.locator(INPUT_SELECTORS.addTask).fill(taskName);
         await this.page.locator(SELECTORS.taskInput).click();
-        await this.page.getByRole('row', { name: new RegExp(taskName, 'i') }).getByRole('button').nth(2).click({
-            timeout: 5000
-        });
-        await this.page.getByRole('button', { name: new RegExp(taskAssignee, 'i') }).click({
-            timeout: 5000
-        })
+        await this.page.getByRole('row', { name: new RegExp(taskName, 'i') }).getByRole('button').nth(2).click();
+        await this.page.getByRole('button', { name: new RegExp(taskAssignee, 'i') }).click();
         await this.page.locator(SELECTORS.onBlur).click();
     }
 
@@ -43,13 +40,10 @@ export class TaskPage {
         await this.page.locator(COMMON_SELECTORS.pannelCloseButton).click();
     }
 
-    verifyDescriptionAndComment = async ({ taskName, taskDescription, taskComment, taskAssignee }: { taskName: string, taskDescription: string, taskComment: string, taskAssignee: string }): Promise<void> => {
-        
+    verifyDescriptionAndComment = async ({ taskName, taskDescription, taskComment, taskAssignee }:TaskDescription): Promise<void> => {        
         await this.page.getByRole('cell', { name: new RegExp(taskName, 'i') }).getByText(new RegExp(taskName, 'i')).click({ timeout: 5000 })
         await expect(this.page.locator(SELECTORS.formWrapper).getByText(new RegExp(`Assignee${taskAssignee}`, 'i'))).toBeVisible()
-        // await expect(this.page.locator('[data-cy="neeto-editor-content"]').filter({ hasText: taskDescription }).nth(0)).toBeVisible({
-        //     timeout: 5000
-        // }); //working on task.spec -->todo
+        await expect(this.page.locator(SELECTORS.taskDescription).filter({ hasText: taskDescription }).nth(0)).toBeVisible({timeout: 5000}); 
         await expect(this.page.getByText(taskComment).first()).toBeVisible();
         await this.page.locator(COMMON_SELECTORS.pannelCloseButton).click();
     }
