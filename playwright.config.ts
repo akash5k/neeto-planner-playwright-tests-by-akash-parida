@@ -29,10 +29,10 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  // reporter: [
-  //   ["@bigbinary/neeto-playwright-reporter", neetoPlaywrightReporterConfig],
-  //   ["html"],
-  // ],
+  reporter: [
+    ["@bigbinary/neeto-playwright-reporter", neetoPlaywrightReporterConfig],
+    ["html"],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout:100_000,
   use: {
@@ -40,9 +40,9 @@ export default defineConfig({
     baseURL: "https://akash-parida-iiit-bh.neetoplanner.net",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    // trace: "on",
-    // video: "on",
-    // screenshot: "on",
+    trace: "on",
+    video: "on",
+    screenshot: "on",
     testIdAttribute: "data-test-id",
   },
 

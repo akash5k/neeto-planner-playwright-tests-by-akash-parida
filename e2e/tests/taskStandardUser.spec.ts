@@ -11,32 +11,25 @@ interface Project {
     projectName: string;
     taskName: string;
     taskDescription: string;
-    taskComment: string
+    taskComment: string;
+    taskAssignee?: string;
 }
 
 test.describe("Create and verify task for different user", () => {
     let loginCode: string;
-
 
     let projects: Project[];
 
     test.beforeEach(() => {
         loginCode = faker.string.numeric(6);
 
-        projects = [
-            {
-                projectName: faker.word.words({ count: 3 }) ,
-                taskName: faker.word.words({ count: 2 }),
-                taskDescription: faker.word.words({ count: 5 }),
-                taskComment: faker.word.words({ count: 5 })
-            },
-            {
-                projectName: faker.word.words({ count: 3 }) ,
-                taskName: faker.word.words({ count: 2 }),
-                taskDescription: faker.word.words({ count: 5 }),
-                taskComment: faker.word.words({ count: 5 })
-            }
-        ];
+        projects = Array.from({ length: 2 }, () => ({
+            projectName: faker.word.words({ count: 3 }),
+            taskName: faker.word.words({ count: 2 }),
+            taskDescription: faker.word.words({ count: 5 }),
+            taskComment: faker.word.words({ count: 5 }),
+            taskAssignee: TEST_DATA.standardUserName
+        }));
     });
 
     test("should create and verify task for standard user", async ({ page, projectPage, taskPage, browser }) => {
@@ -57,7 +50,7 @@ test.describe("Create and verify task for different user", () => {
             });
         })
 
-        await test.step("Step 2: Assert there are no assigned tasks", async () => {
+        await test.step("Step 2: Assert there are no assigned tasks for standard user", async () => {
             await standardUserPage.locator(COMMON_TEXTS.tasksNav).click();
             await expect(standardUserPage.getByRole('heading', { name: COMMON_TEXTS.assertTaskNumber })).toBeVisible();
             await standardUserPage.locator(COMMON_TEXTS.projectsNav).click();
@@ -78,8 +71,11 @@ test.describe("Create and verify task for different user", () => {
             await standardUserPage.reload();
             await standardUserPage.locator(COMMON_TEXTS.tasksNav).click();
             for (const task of projects) {
-                await standardUserTaskPage.verifyDescriptionAndComment({ taskName: task.taskName, taskDescription: task.taskDescription, taskComment: task.taskComment, taskAssignee: TEST_DATA.standardUserName });
+                await standardUserTaskPage.verifyDescriptionAndComment(task);
             }
+ 
+            await standardUserPage.close();
+            await standardUserContext.close();
         })
     });
 

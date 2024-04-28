@@ -1,20 +1,29 @@
 import { expect } from "@playwright/test";
-import { faker, fi } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import { test } from "../fixtures/index";
 
 import {  COMMON_TEXTS, TEST_DATA } from "../constants/common";
 
+interface Project {
+    projectName: string;
+    taskName: string;
+    taskDescription: string;
+    taskComment: string;
+    taskAssignee: string;
+}
+
 test.describe("Create and verify tasks", () => {
-    let projectNames: string[];
-    let taskNames: string[];
-    let taskDescriptions: string[];
-    let taskComments: string[];
+    let projects: Project[];
+   
 
     test.beforeEach(() => {
-        projectNames = [faker.word.words({ count: 3 }), faker.word.words({ count: 3 })];
-        taskNames = [faker.word.words({ count: 2 }), faker.word.words({ count: 2 })];
-        taskDescriptions = [faker.word.words({ count: 5 }), faker.word.words({ count: 5 })];
-        taskComments = [faker.word.words({ count: 5 }), faker.word.words({ count: 5 })];
+        projects = Array.from({ length: 2 }, () => ({
+            projectName: faker.word.words({ count: 3 }),
+            taskName: faker.word.words({ count: 2 }),
+            taskDescription: faker.word.words({ count: 5 }),
+            taskComment: faker.word.words({ count: 5 }),
+            taskAssignee: TEST_DATA.userName
+        }));
     });
 
     test("should create and verify tasks", async ({ page, projectPage, taskPage }) => {
@@ -29,33 +38,26 @@ test.describe("Create and verify tasks", () => {
         });
 
         await test.step("Step 3: Create projects and tasks", async () => {
-            for (let i = 0; i < projectNames.length; i++) {
-                await projectPage.addProject({ projectName: projectNames[i] });
-                await taskPage.addTask({ taskName: taskNames[i], taskAssignee: TEST_DATA.userName });
-                await taskPage.addDescriptionAndComment({
-                    taskName: taskNames[i],
-                    taskDescription: taskDescriptions[i],
-                    taskComment: taskComments[i]
-                });
+            
+            for (const project of projects) {
                 await page.goto("/");
+                await projectPage.addProject({ projectName: project.projectName });
+                await taskPage.addTask({ taskName: project.taskName, taskAssignee: project.taskAssignee });
+                await taskPage.addDescriptionAndComment({ taskName: project.taskName, taskDescription: project.taskDescription, taskComment: project.taskComment });
             }
+            
         });
 
         await test.step("Step 4: Verify tasks in Tasks section", async () => {
             await page.locator(COMMON_TEXTS.tasksNav).click();
-            for (let i = 0; i < taskNames.length; i++) {
-                await taskPage.verifyDescriptionAndComment({
-                    taskName: taskNames[i],
-                    taskDescription: taskDescriptions[i],
-                    taskComment: taskComments[i],
-                    taskAssignee: TEST_DATA.userName
-                });
+            for (const task of projects) {
+                await taskPage.verifyDescriptionAndComment(task);
             }
         });
     });
     test.afterEach(async ({ projectPage }) => {
-        for (let projectName of projectNames) {
-            await projectPage.deleteProject({ projectName });
+        for (const projectName of projects) {
+            await projectPage.deleteProject({ projectName:projectName.projectName });
         }
     })
 });

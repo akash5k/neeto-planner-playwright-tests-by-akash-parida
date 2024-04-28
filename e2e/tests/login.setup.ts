@@ -1,9 +1,9 @@
-//login.spec.ts
-
 import { faker } from "@faker-js/faker"
 import { test } from "../fixtures"
 import { STORAGE_STATE } from "../../playwright.config";
-import { BASE_URL, TEST_DATA } from "../constants/common";
+
+import { TEST_DATA } from "../constants/common";
+import { BASE_URL } from "../constants/routes";
 
 test.describe("Login page", () => {
     let loginCode: string;

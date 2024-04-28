@@ -1,0 +1,1 @@
+export const BASE_URL = "https://akash-parida-iiit-bh.neetoplanner.net/"

@@ -1,5 +1,3 @@
-// poms/login.ts
-
 import { Page, expect } from "@playwright/test";
 import {TEXT_SELECTORS,INPUT_SELECTORS} from "../constants/texts/login";
 

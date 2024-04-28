@@ -30,7 +30,7 @@ export class TaskPage {
 
     addDescriptionAndComment = async ({ taskName, taskDescription, taskComment }:TaskDescription): Promise<void> => {
         await this.page.getByRole('cell', { name: new RegExp(taskName, 'i') })
-            .getByText(new RegExp(taskName, 'i')).click({ timeout: 5000 })
+            .getByText(new RegExp(taskName, 'i')).click()
         await this.page.getByText(TEXT_SELECTOR.addDescription).click();
         await this.page.locator(SELECTORS.addMoreDetails).fill(taskDescription);
         await this.page.getByRole('button', { name: BUTTON_TEXTS.saveChanges }).click();
@@ -41,9 +41,9 @@ export class TaskPage {
     }
 
     verifyDescriptionAndComment = async ({ taskName, taskDescription, taskComment, taskAssignee }:TaskDescription): Promise<void> => {        
-        await this.page.getByRole('cell', { name: new RegExp(taskName, 'i') }).getByText(new RegExp(taskName, 'i')).click({ timeout: 5000 })
+        await this.page.getByRole('cell', { name: new RegExp(taskName, 'i') }).getByText(new RegExp(taskName, 'i')).click()
         await expect(this.page.locator(SELECTORS.formWrapper).getByText(new RegExp(`Assignee${taskAssignee}`, 'i'))).toBeVisible()
-        await expect(this.page.locator(SELECTORS.taskDescription).filter({ hasText: taskDescription }).nth(0)).toBeVisible({timeout: 5000}); 
+        await expect(this.page.locator(SELECTORS.taskDescription).filter({ hasText: taskDescription }).nth(0)).toBeVisible(); 
         await expect(this.page.getByText(taskComment).first()).toBeVisible();
         await this.page.locator(COMMON_SELECTORS.pannelCloseButton).click();
     }

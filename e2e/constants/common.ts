@@ -1,5 +1,3 @@
-export const BASE_URL = "https://akash-parida-iiit-bh.neetoplanner.net/"
-
 export const TEST_DATA = {
     userName: 'Akash Parida',
     email : "cpts9gnqty9-planner-akash_parida-iiit_bh@bigbinary.com",
