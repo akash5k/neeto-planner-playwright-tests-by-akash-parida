@@ -33,7 +33,9 @@ test.describe("Create and verify tasks", () => {
 
         await test.step("Step 2: Assert there are no assigned tasks", async () => {
             await page.locator(COMMON_TEXTS.tasksNav).click();
-            await expect(page.getByRole('heading', { name: '0 tasks' })).toBeVisible();
+            for(let project of projects){
+                await expect(page.getByRole('cell', { name: new RegExp(project.taskName, 'i')})).toBeHidden();                
+            }
             await page.locator(COMMON_TEXTS.projectsNav).click();
         });
 

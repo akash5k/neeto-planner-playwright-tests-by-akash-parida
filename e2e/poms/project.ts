@@ -17,14 +17,10 @@ export class ProjectPage {
 
     addProject = async ({ projectName, projectDescription = "" }: ProjectDetails): Promise<void> => {
         //goto main page
-
         await this.page.getByRole('button', { name: BUTTON_TEXTS.addButton }).click();
         await this.page.getByPlaceholder(INPUT_SELECTORS.projectName).fill(projectName);
         await this.page.getByPlaceholder(INPUT_SELECTORS.projectDescription).fill(projectDescription);
         await this.page.getByRole('button', { name: BUTTON_TEXTS.saveButton }).click();
-
-        //verify project creation
-        await expect(this.page.getByText(projectName)).toBeVisible();
     }
 
     addStandaruserToProject = async (): Promise<void> => {

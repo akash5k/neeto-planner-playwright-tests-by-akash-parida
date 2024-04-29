@@ -23,7 +23,9 @@ export class TaskPage {
         await this.page.getByRole('button', { name: BUTTON_TEXTS.addTaskButton }).click()
         await this.page.locator(INPUT_SELECTORS.addTask).fill(taskName);
         await this.page.locator(SELECTORS.taskInput).click();
-        await this.page.getByRole('row', { name: new RegExp(taskName, 'i') }).getByRole('button').nth(2).click();
+        // await this.page.getByRole('row', { name: new RegExp(taskName, 'i') }).getByRole('button').nth(2).click();
+        await this.page.getByRole('row', { name: new RegExp(taskName, 'i') }).getByRole('cell').locator('span').getByRole('button').click();
+
         await this.page.getByRole('button', { name: new RegExp(taskAssignee, 'i') }).click();
         await this.page.locator(SELECTORS.onBlur).click();
     }
@@ -43,7 +45,7 @@ export class TaskPage {
     verifyDescriptionAndComment = async ({ taskName, taskDescription, taskComment, taskAssignee }:TaskDescription): Promise<void> => {        
         await this.page.getByRole('cell', { name: new RegExp(taskName, 'i') }).getByText(new RegExp(taskName, 'i')).click()
         await expect(this.page.locator(SELECTORS.formWrapper).getByText(new RegExp(`Assignee${taskAssignee}`, 'i'))).toBeVisible()
-        await expect(this.page.locator(SELECTORS.taskDescription).filter({ hasText: taskDescription }).nth(0)).toBeVisible(); 
+        await expect(this.page.locator(SELECTORS.taskDescription).filter({ hasText: taskDescription })).toBeVisible(); 
         await expect(this.page.getByText(taskComment).first()).toBeVisible();
         await this.page.locator(COMMON_SELECTORS.pannelCloseButton).click();
     }

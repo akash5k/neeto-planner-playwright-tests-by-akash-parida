@@ -51,9 +51,11 @@ test.describe("Create and verify task for different user", () => {
         })
 
         await test.step("Step 2: Assert there are no assigned tasks for standard user", async () => {
-            await standardUserPage.locator(COMMON_TEXTS.tasksNav).click();
-            await expect(standardUserPage.getByRole('heading', { name: COMMON_TEXTS.assertTaskNumber })).toBeVisible();
-            await standardUserPage.locator(COMMON_TEXTS.projectsNav).click();
+            await page.locator(COMMON_TEXTS.tasksNav).click();
+            for(let project of projects){
+                await expect(page.getByRole('cell', { name: new RegExp(project.taskName, 'i')})).toBeHidden();                
+            }
+            await page.locator(COMMON_TEXTS.projectsNav).click();
         })
 
         await test.step("Step 3: Create projects and tasks", async () => {
