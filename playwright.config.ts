@@ -43,7 +43,6 @@ export default defineConfig({
     trace: "on",
     video: "on",
     screenshot: "on",
-    testIdAttribute: "data-test-id",
   },
 
   /* Configure projects for major browsers */

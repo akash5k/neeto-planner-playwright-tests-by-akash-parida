@@ -1,5 +1,3 @@
-//constants/selectors/project.ts -> constansts for project page
-
 export const BUTTON_TEXTS = {
     addButton : "Add new project",
     saveButton : "Save changes",
@@ -12,7 +10,7 @@ export const BUTTON_TEXTS = {
     listTab : "List"
 }
 
-export const INPUT_SELECTORS = {
+export const PLACEHOLDERS = {
     projectName : "Enter project name",
     projectDescription : "Enter description"
 }

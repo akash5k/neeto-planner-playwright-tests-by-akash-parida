@@ -5,7 +5,8 @@ import LoginPage from "../poms/login";
 import { TaskPage } from "../poms/task";
 
 import { BUTTON_TEXTS } from "../constants/texts/project";
-import { COMMON_TEXTS, TEST_DATA } from "../constants/common";
+import {COMMON_SELECTORS} from "../constants/selectors/common";
+import { TEST_DATA } from "../constants/testData";
 
 interface Project {
     projectName: string;
@@ -51,11 +52,11 @@ test.describe("Create and verify task for different user", () => {
         })
 
         await test.step("Step 2: Assert there are no assigned tasks for standard user", async () => {
-            await page.locator(COMMON_TEXTS.tasksNav).click();
+            await page.getByTestId(COMMON_SELECTORS.tasksNav).click();
             for(let project of projects){
                 await expect(page.getByRole('cell', { name: new RegExp(project.taskName, 'i')})).toBeHidden();                
             }
-            await page.locator(COMMON_TEXTS.projectsNav).click();
+            await page.getByTestId(COMMON_SELECTORS.projectsNav).click();
         })
 
         await test.step("Step 3: Create projects and tasks", async () => {
@@ -71,7 +72,7 @@ test.describe("Create and verify task for different user", () => {
 
         await test.step("Step 4: Verify tasks in Tasks section for standard user", async () => {
             await standardUserPage.reload();
-            await standardUserPage.locator(COMMON_TEXTS.tasksNav).click();
+            await standardUserPage.getByTestId(COMMON_SELECTORS.tasksNav).click();
             for (const task of projects) {
                 await standardUserTaskPage.verifyDescriptionAndComment(task);
             }

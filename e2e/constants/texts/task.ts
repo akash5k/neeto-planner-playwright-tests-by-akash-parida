@@ -7,8 +7,3 @@ export const BUTTON_TEXTS = {
     saveChanges : 'Save changes',
     commentButton : 'Comment'
 }
-
-export const INPUT_SELECTORS = {
-    paragraphInput : 'editor-content',
-    addTask : '[data-cy="nui-input-field"]'
-}
