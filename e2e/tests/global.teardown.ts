@@ -1,5 +1,3 @@
-// global.teardown.ts
-
 import { test } from "@playwright/test";
 import { STORAGE_STATE } from "../../playwright.config";
 import * as fs from "fs";

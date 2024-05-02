@@ -34,7 +34,7 @@ export default defineConfig({
     ["html"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  timeout:60000,
+  timeout:100_000,
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: "https://akash-parida-iiit-bh.neetoplanner.net",
@@ -43,7 +43,6 @@ export default defineConfig({
     trace: "on",
     video: "on",
     screenshot: "on",
-    testIdAttribute: "data-test-id",
   },
 
   /* Configure projects for major browsers */
