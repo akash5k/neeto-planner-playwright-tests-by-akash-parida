@@ -13,7 +13,7 @@ interface Project {
     taskName: string;
     taskDescription: string;
     taskComment: string;
-    taskAssignee?: string;
+    taskAssignee: string;
 }
 
 test.describe("Create and verify task for different user", () => {
@@ -53,9 +53,7 @@ test.describe("Create and verify task for different user", () => {
 
         await test.step("Step 2: Assert there are no assigned tasks for standard user", async () => {
             await page.getByTestId(COMMON_SELECTORS.tasksNav).click();
-            for(let project of projects){
-                await expect(page.getByRole('cell', { name: new RegExp(project.taskName, 'i')})).toBeHidden();                
-            }
+            await Promise.all(projects.map(({ taskName }) => expect(page.getByRole('cell', { name: new RegExp(taskName, 'i') })).toBeHidden()))
             await page.getByTestId(COMMON_SELECTORS.projectsNav).click();
         })
 
@@ -65,16 +63,16 @@ test.describe("Create and verify task for different user", () => {
                 await projectPage.addProject({ projectName: project.projectName });
                 await projectPage.addStandaruserToProject();
                 await page.getByRole('button', { name: BUTTON_TEXTS.listTab }).click();
-                await taskPage.addTask({ taskName: project.taskName, taskAssignee: TEST_DATA.standardUserName });
-                await taskPage.addDescriptionAndComment({ taskName: project.taskName, taskDescription: project.taskDescription, taskComment: project.taskComment });
+                await taskPage.addTask(project);
+                await taskPage.addDescriptionAndComment(project);
             }
         })
 
         await test.step("Step 4: Verify tasks in Tasks section for standard user", async () => {
             await standardUserPage.reload();
             await standardUserPage.getByTestId(COMMON_SELECTORS.tasksNav).click();
-            for (const task of projects) {
-                await standardUserTaskPage.verifyDescriptionAndComment(task);
+            for (const project of projects) {
+                await standardUserTaskPage.verifyDescriptionAndComment(project);
             }
  
             await standardUserPage.close();
@@ -83,8 +81,8 @@ test.describe("Create and verify task for different user", () => {
     });
 
     test.afterEach(async ({ projectPage }) => {
-        for (const project of projects) {
-            await projectPage.deleteProject({ projectName: project.projectName });
+        for (const {projectName} of projects) {
+            await projectPage.deleteProject({ projectName });
         }
     });
 });

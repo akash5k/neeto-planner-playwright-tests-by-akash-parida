@@ -30,17 +30,15 @@ test.describe("Create and verify tasks", () => {
 
         await test.step("Step 2: Assert there are no assigned tasks", async () => {
             await page.getByTestId(COMMON_SELECTORS.tasksNav).click();
-            for (let project of projects) {
-                await expect(page.getByRole('cell', { name: new RegExp(project.taskName, 'i') })).toBeHidden();
-            }
+            await Promise.all(projects.map(({ taskName }) => expect(page.getByRole('cell', { name: new RegExp(taskName, 'i') })).toBeHidden()))
             await page.getByTestId(COMMON_SELECTORS.projectsNav).click();
         });
 
         await test.step("Step 3: Create projects and tasks", async () => {
             for (const project of projects) {
                 await page.goto("/");
-                await projectPage.addProject({ projectName: project.projectName });
-                await taskPage.addTask({ taskName: project.taskName, taskAssignee: project.taskAssignee });
+                await projectPage.addProject(project);
+                await taskPage.addTask(project);
                 await taskPage.addDescriptionAndComment(project);
             }
 
@@ -48,8 +46,8 @@ test.describe("Create and verify tasks", () => {
 
         await test.step("Step 4: Verify tasks in Tasks section", async () => {
             await page.getByTestId(COMMON_SELECTORS.tasksNav).click();
-            for (const task of projects) {
-                await taskPage.verifyDescriptionAndComment(task);
+            for (const project of projects) {
+                await taskPage.verifyDescriptionAndComment(project);
             }
         });
     });
