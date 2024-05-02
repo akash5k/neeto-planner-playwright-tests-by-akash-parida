@@ -7,11 +7,9 @@ interface TaskDetails {
     taskName: string,
     taskAssignee: string
 }
-interface TaskDescription {
-    taskName: string,
+interface TaskDescription extends TaskDetails {
     taskDescription: string,
     taskComment: string,
-    taskAssignee?: string
 }
 export class TaskPage {
     page: Page;
